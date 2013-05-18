@@ -1,3 +1,4 @@
+(live-add-pack-lib "etags-select")
 (live-add-pack-lib "sj-ediff")
 (live-add-pack-lib "sj-misc-custom")
 (live-add-pack-lib "sj-linux")
