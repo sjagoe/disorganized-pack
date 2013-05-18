@@ -13,3 +13,5 @@
 
 (global-set-key "\M-?" 'etags-select-find-tag)
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
+
+(global-set-key (kbd "M-/") 'dabbrev-expand)
