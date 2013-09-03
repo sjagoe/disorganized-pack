@@ -23,6 +23,8 @@
 
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 
+(window-number-meta-mode 0)
+
 (defun etags-select-get-tag-files ()
   "Get tag files."
   (if etags-select-use-xemacs-etags-p
@@ -34,5 +36,7 @@
 
 (require 'log4j-mode)
 (require 'mo-git-blame)
+
+(setenv "PYTHONUNBUFFERED" "true")
 
 (subword-mode t)
