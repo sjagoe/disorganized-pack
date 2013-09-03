@@ -3,6 +3,8 @@
 (live-add-pack-lib "sj-misc-custom")
 (live-add-pack-lib "sj-linux")
 (live-add-pack-lib "grin")
+(live-add-pack-lib "log4j-mode")
+(live-add-pack-lib "mo-git-blame")
 
 (require 'sj-ediff)
 (require 'sj-misc-custom)
@@ -18,3 +20,7 @@
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
 
 (global-set-key (kbd "M-/") 'dabbrev-expand)
+
+(require 'log4j-mode)
+(require 'mo-git-blame)
+
