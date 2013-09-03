@@ -16,11 +16,23 @@
 (setq line-move-visual nil)
 (setq truncate-partial-width-windows t)
 
+(require 'etags-select)
+
 (global-set-key "\M-?" 'etags-select-find-tag)
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
 
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 
+(defun etags-select-get-tag-files ()
+  "Get tag files."
+  (if etags-select-use-xemacs-etags-p
+      (buffer-tag-table-list)
+    (progn
+      (mapcar 'tags-expand-table-name tags-table-list)
+      (tags-table-check-computed-list)
+      tags-table-computed-list)))
+
 (require 'log4j-mode)
 (require 'mo-git-blame)
 
+(subword-mode t)
