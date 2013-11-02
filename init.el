@@ -2,6 +2,7 @@
 (live-add-pack-lib "sj-ediff")
 (live-add-pack-lib "sj-misc-custom")
 (live-add-pack-lib "sj-linux")
+(live-add-pack-lib "sj-spelling")
 (live-add-pack-lib "grin")
 (live-add-pack-lib "log4j-mode")
 (live-add-pack-lib "mo-git-blame")
@@ -9,6 +10,7 @@
 (require 'sj-ediff)
 (require 'sj-misc-custom)
 (require 'sj-linux)
+(require 'sj-spelling)
 (require 'grin)
 
 (define-coding-system-alias 'UTF-8 'utf-8)
@@ -39,4 +41,4 @@
 
 (setenv "PYTHONUNBUFFERED" "true")
 
-(subword-mode t)
+(global-subword-mode t)
