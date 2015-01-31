@@ -2,16 +2,22 @@
 (live-add-pack-lib "sj-ediff")
 (live-add-pack-lib "sj-misc-custom")
 (live-add-pack-lib "sj-linux")
-(live-add-pack-lib "sj-spelling")
+(live-add-pack-lib "sj-jabber")
 (live-add-pack-lib "grin")
 (live-add-pack-lib "log4j-mode")
 (live-add-pack-lib "mo-git-blame")
+(live-add-pack-lib "sj-spelling")
+(live-add-pack-lib "graphviz-dot-mode")
+(live-add-pack-lib "nix-mode")
 
 (require 'sj-ediff)
 (require 'sj-misc-custom)
 (require 'sj-linux)
 (require 'sj-spelling)
 (require 'grin)
+(require 'graphviz-dot-mode)
+
+(require 'sj-jabber)
 
 (define-coding-system-alias 'UTF-8 'utf-8)
 (setq-default display-buffer-reuse-frames t)
@@ -42,3 +48,5 @@
 (setenv "PYTHONUNBUFFERED" "true")
 
 (global-subword-mode t)
+
+(require 'nix-mode)
