@@ -50,3 +50,23 @@
 (global-subword-mode t)
 
 (require 'nix-mode)
+
+
+(defun standup-format-notes (beg end)
+  "Format standup notes for slack"
+  (interactive (if (use-region-p)
+                   (list (region-beginning) (region-end))
+                 (list (point-min) (point-min))))
+  (let ((selection (buffer-substring-no-properties beg end)))
+    (if (= (length selection) 0)
+        (kill-new "")
+      (kill-new
+       (replace-regexp-in-string
+        "^\\( *\\)- " "  \\1- "
+        (replace-regexp-in-string
+         "^\\*\\*\\*\\* " "* "
+         (replace-regexp-in-string
+          "^\\*\\*\\* \\(.*\\)$" "\n\\1:"
+          (replace-regexp-in-string
+           "^CLOCK.*$" ""
+           (replace-regexp-in-string "^\\*+ Web Services " "" selection)))))))))
